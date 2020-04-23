@@ -34,8 +34,6 @@ dist_sq_eineZeile = np.sum(X[:,np.newaxis, :]-X[np.newaxis,:, :]**2,axis=-1)
 nearest = np.argsort(dist_sq, axis = 1)
 #  sorts along the last axis
 
-print(nearest)
-
 K = 2 # number of neighbours
 nearest_partition   = np.argpartition(dist_sq, K+1, axis=1) # returns indices
 nearest_part_value  = np.partition(dist_sq, K+1, axis=1) # returns values
